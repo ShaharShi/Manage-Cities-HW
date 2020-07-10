@@ -1,0 +1,21 @@
+.form-wrapper {
+    width: 75%;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #E9ECEF;
+
+    .inner-form-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        grid-column-gap: 10px;
+
+        .name-label { grid-column: 1; grid-row: 1; }
+        .name-input { grid-column: 1; grid-row: 2; }
+        .img-label { grid-column: 2; grid-row: 1; }
+        .img-input { grid-column: 2; grid-row: 2; }
+        input[type='submit'] { grid-column: 3; grid-row: 2; }
+    }
+}
+
