@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .form-wrapper {
   width: 75%;
   margin: 0 auto;
@@ -51,5 +58,77 @@
   grid-column: 3;
   -ms-grid-row: 2;
   grid-row: 2;
+}
+
+.cards-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.cards-container .card-wrapper, .cards-container .card-wrapper-hover {
+  position: relative;
+}
+
+.cards-container .card-wrapper img, .cards-container .card-wrapper-hover img {
+  width: 100%;
+  height: 100%;
+}
+
+.cards-container .card-wrapper .city-name, .cards-container .card-wrapper-hover .city-name {
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  color: #676767;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom-right-radius: 5px;
+}
+
+.cards-container .card-wrapper .like-counter, .cards-container .card-wrapper-hover .like-counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  color: #676767;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top-left-radius: 5px;
+}
+
+.cards-container .card-wrapper .like-counter i, .cards-container .card-wrapper-hover .like-counter i {
+  font-size: 1.3rem;
+}
+
+.card-wrapper-hover img {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.card-wrapper-hover .city-name {
+  display: none;
+}
+
+.card-wrapper-hover .like-counter {
+  display: none;
+}
+
+.card-wrapper-hover .like-btn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.8rem;
+  color: white;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */
