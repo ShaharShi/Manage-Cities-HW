@@ -5,8 +5,14 @@ $("#cityForm").on("submit", (e) => {
   const cityNameVal = $("#cityName").val();
   const cityImgVal = $("#cityImg").val();
 
-  draw(cityNameVal, cityImgVal);
+    formValidation(cityNameVal, cityImgVal)
 });
+
+function formValidation(cityNameVal, cityImgVal) { 
+    if (cityImgVal === '' || cityImgVal.length === 0) return;
+
+    draw(cityNameVal, cityImgVal);
+}
 
 function draw(cityNameVal, cityURL) {
   const cardItem = getCardItem(cityNameVal, cityURL);
@@ -15,11 +21,11 @@ function draw(cityNameVal, cityURL) {
 }
 
 function getCardItem(cityNameVal, cityURL) {
-  const likeCount = 0;
-  const cardWrapper = $("<div class='card card-wrapper'></div>");
+  let counterOnUI, numOfLikes = 0;
+  const cardWrapper = $("<div class='img-thumbnail card-wrapper'></div>");
   const cityImg = $("<img>").attr("src", `${cityURL}`);
   const cityName = $("<p class='city-name'></p>").text(cityNameVal);
-  const likeCounter = _getLikeCounter(likeCount);
+  const likeCounter = _getLikeCounter(numOfLikes);
   const likeBtn = _getLikeBtn();
 
   cardWrapper.on("mouseenter", () => {
@@ -34,30 +40,37 @@ function getCardItem(cityNameVal, cityURL) {
   cardWrapper.append(cityImg, cityName, likeCounter, likeBtn);
   return cardWrapper;
 
-  function _getLikeCounter(likeCount) {
+  function _getLikeCounter(numOfLikes) {
     const likeCounterWrapper = $("<div class='like-counter'></div>");
     const likeIcon = $("<i class='far fa-heart'></i>");
-    const counterOnUI = $("<span></span>").text(likeCount);
+    counterOnUI = $("<span></span>").text(numOfLikes);
 
     likeCounterWrapper.append(likeIcon, counterOnUI);
 
     return likeCounterWrapper;
   }
+
   function _getLikeBtn() {
     const likeBtnWrapper = $("<div class='like-btn'></div>");
     const likeBtnIcon = $("<i class='far fa-heart pulse-anim'></i>");
 
     likeBtnIcon.on("click", () => {
-      likeBtnIcon.removeClass("far");
-      likeBtnIcon.addClass("fas");
+      _likesIncreasement();
+      likeBtnIcon.removeClass("far").addClass("fas");
       setTimeout(() => {
-        likeBtnIcon.removeClass("fas");
-        likeBtnIcon.addClass("far");
+        likeBtnIcon.removeClass("fas").addClass("far");
       }, 300);
     });
 
     likeBtnWrapper.append(likeBtnIcon);
 
     return likeBtnWrapper;
+  }
+
+  function _likesIncreasement() {
+    numOfLikes++;
+    setTimeout(() => {
+        counterOnUI.text(numOfLikes);
+    }, 2000);
   }
 }

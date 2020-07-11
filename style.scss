@@ -25,7 +25,6 @@
     }
 }
 
-
 .cards-container {
     width: 80%;
     margin: 0 auto;
@@ -34,6 +33,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    align-items: center;
 
     .card-wrapper {
         position: relative;
@@ -87,10 +87,9 @@
     }
 }
 
-
 .pulse-anim {
     animation-name: pulse;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     animation-fill-mode: both;
 }
 @keyframes pulse {
