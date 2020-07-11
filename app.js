@@ -74,3 +74,4 @@ function getCardItem(cityNameVal, cityURL) {
     }, 2000);
   }
 }
+
