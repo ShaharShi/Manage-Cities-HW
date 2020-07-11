@@ -60,6 +60,15 @@
 
             i { font-size: 1.3rem;}
         }
+        .like-btn { 
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.8rem;
+            color: white;
+            transform: translate(-50%, -50%);
+        }
     }
 }
 
@@ -74,12 +83,24 @@
         display: none;
     }
     .like-btn {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 1.8rem;
-        color: white;
-        transform: translate(-50%, -50%);
+        display: block !important;
     }
 }
+
+
+.pulse-anim {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes pulse {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.80, 1.80, 1.80);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+} 
