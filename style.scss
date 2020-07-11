@@ -1,105 +1,128 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .form-wrapper {
-    width: 75%;
-    margin: 0 auto;
-    padding: 15px;
-    background-color: #E9ECEF;
+  width: 75%;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #e9ecef;
 
-    .inner-form-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        align-items: center;
-        grid-column-gap: 10px;
+  .inner-form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 10px;
 
-        .name-label { grid-column: 1; grid-row: 1; }
-        .name-input { grid-column: 1; grid-row: 2; }
-        .img-label { grid-column: 2; grid-row: 1; }
-        .img-input { grid-column: 2; grid-row: 2; }
-        input[type='submit'] { grid-column: 3; grid-row: 2; }
+    .name-label {
+      grid-column: 1;
+      grid-row: 1;
     }
+    .name-input {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .img-label {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .img-input {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    input[type="submit"] {
+      grid-column: 3;
+      grid-row: 2;
+    }
+  }
 }
 
 .cards-container {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  align-items: center;
 
-    .card-wrapper {
-        position: relative;
-        
-        img { width: 100%; height: 100%;}
-        .city-name { 
-            position: absolute; 
-            top: 0;
-            padding: 5px;
-            color: rgb(103, 103, 103);
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-bottom-right-radius: 5px;
-        }
-        .like-counter {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            padding: 5px;
-            color: rgb(103, 103, 103);
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-top-left-radius: 5px;
+  .card-wrapper {
+    position: relative;
 
-            i { font-size: 1.3rem;}
-        }
-        .like-btn { 
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 1.8rem;
-            color: white;
-            transform: translate(-50%, -50%);
-        }
+    img {
+      width: 100%;
+      height: 100%;
     }
+    .city-name {
+      position: absolute;
+      top: 0;
+      padding: 5px;
+      color: rgb(103, 103, 103);
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom-right-radius: 5px;
+    }
+    .like-counter {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 5px;
+      color: rgb(103, 103, 103);
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-top-left-radius: 5px;
+
+      i {
+        font-size: 1.3rem;
+      }
+    }
+    .like-btn {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 1.8rem;
+      color: white;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 .card-wrapper-hover {
-    @extend .card-wrapper;
-    img { transition: all 0.2s; filter: blur(1px)}
+  @extend .card-wrapper;
+  img {
+    transition: all 0.2s;
+    filter: blur(1px);
+  }
 
-    .city-name { 
-        display: none;
-    }
-    .like-counter {
-        display: none;
-    }
-    .like-btn {
-        display: block !important;
-    }
+  .city-name {
+    display: none;
+  }
+  .like-counter {
+    display: none;
+  }
+  .like-btn {
+    display: block !important;
+  }
 }
 
 .pulse-anim {
-    animation-name: pulse;
-    animation-duration: 0.8s;
-    animation-fill-mode: both;
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
 }
 @keyframes pulse {
-    0% {
-        transform: scale3d(1, 1, 1);
-    }
-    50% {
-        transform: scale3d(1.80, 1.80, 1.80);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-    }
-} 
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.8, 1.8, 1.8);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}

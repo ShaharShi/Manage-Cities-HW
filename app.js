@@ -5,13 +5,13 @@ $("#cityForm").on("submit", (e) => {
   const cityNameVal = $("#cityName").val();
   const cityImgVal = $("#cityImg").val();
 
-    formValidation(cityNameVal, cityImgVal)
+  formValidation(cityNameVal, cityImgVal);
 });
 
-function formValidation(cityNameVal, cityImgVal) { 
-    if (cityImgVal === '' || cityImgVal.length === 0) return;
+function formValidation(cityNameVal, cityImgVal) {
+  if (cityImgVal === "" || cityImgVal.length === 0) return;
 
-    draw(cityNameVal, cityImgVal);
+  draw(cityNameVal, cityImgVal);
 }
 
 function draw(cityNameVal, cityURL) {
@@ -21,7 +21,8 @@ function draw(cityNameVal, cityURL) {
 }
 
 function getCardItem(cityNameVal, cityURL) {
-  let counterOnUI, numOfLikes = 0;
+  let counterOnUI,
+    numOfLikes = 0;
   const cardWrapper = $("<div class='img-thumbnail card-wrapper'></div>");
   const cityImg = $("<img>").attr("src", `${cityURL}`);
   const cityName = $("<p class='city-name'></p>").text(cityNameVal);
@@ -70,7 +71,7 @@ function getCardItem(cityNameVal, cityURL) {
   function _likesIncreasement() {
     numOfLikes++;
     setTimeout(() => {
-        counterOnUI.text(numOfLikes);
+      counterOnUI.text(numOfLikes);
     }, 2000);
   }
 }
